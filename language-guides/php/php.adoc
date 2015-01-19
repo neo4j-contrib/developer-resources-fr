@@ -1,0 +1,148 @@
+= Using Neo4j from PHP
+:level: Intermediate
+:toc:
+:toc-placement!:
+:toc-title: Overview
+:toclevels: 2
+:section: Develop with Neo4j
+:section-link: language-guides
+
+.Goals
+[abstract]
+If you are a PHP developer, this guide provides an overview of options for connecting to Neo4j.
+While this guide is not comprehensive it will introduce the different drivers and link to the relevant resources.
+
+.Prerequisites
+[abstract]
+You should be familiar with link:/developer/get-started/graph-database[graph database concepts] and the property graph model.
+You should have link:/download[installed Neo4j] and made yourself familiar with our link:/developer/cypher[Cypher Query language].
+
+[role=expertise]
+{level}
+
+toc::[]
+
+// tag::intro[]
+=== Neo4j for PHP Developers
+
+image::http://dev.assets.neo4j.com.s3.amazonaws.com/wp-content/uploads/neo4j-loves-php.png[]
+
+You're a PHP developer and want to start with Neo4j?
+You're in the right place!
+
+Whether you're using frameworks like Symfony and Laravel or you're developing without frameworks, you'll find an adequate library for your use case.
+
+// end::intro[]
+
+If you have any questions, you can always find a community member around on Twitter or StackOverflow by tagging your subjects with #neo4j-php.
+
+
+Members of the PHP community have invested a lot of time and love to develop all these drivers, so please if you use them, provide feedback to the authors.
+
+include::../_includes/sample_project.adoc[]
+
+=== Using Neo4j in a standalone PHP environment
+
+If you prefer to develop without frameworks, these libraries are made for you:
+
+=== Neo4jPHP
+
+Neo4jPHP provides an API that is both intuitive and flexible, and it takes advantage of ‘under-the-hood’ performance enhancements, such as caching and lazy-loading.
+
+* link:{github}/language-guides/php/neo4jphp[Example Project with Neo4jPHP]
+* http://github.com/jadell/neo4jphp[Neo4jPHP on GitHub]
+* Author: http://twitter.com/josh_adell[Josh Adell]
+* http://github.com/jadell/neo4jphp/wiki/Introduction[GitHub]
+
+=== NeoClient
+
+NeoClient is a powerful and flexible PHP Client for Neo4j with MultiDB support, and full High-Availability support for Neo4j Enterprise, and a convenient object formatter for handling graph results.
+It is built on top of the Symfony components, which makes integrating it in a modern PHP framework very easy.
+The 2.0 stable release has been announced end of November 14, with the following changes and improvements:
+
+- Everything is built as an extension, meaning the core commands are an extension to the library, which makes the library very flexible and customizable.
+- All commands are registered as lazy services, improving the library performance.
+- The Service Container can be cached, gaining up to 300% performance when runnning in production.
+- Full High-Availability support, with master re-election detection, slaves fallback built-in mechanism, and convenience methods for directing write and read queries to different databases.
+- Minimalistic HA mechanism when running Neo4j Community Edition
+- Full-fledged Response Graph format.
+
+
+* link:{github}/language-guides/php/neoclient[Example Project with NeoClient]
+* https://github.com/neoxygen/neo4j-neoclient[NeoClient GitHub]
+* Author: http://twitter.com/ikwattro[Christophe Willemsen]
+* http://neoxygen.io[Neo4j PHP Components and libraries]
+* http://graphgen.neoxygen.io[Graph Generator using NeoClient]
+
+=== Neo4j-OGM-PHP
+
+This library provides a basic Object-Graph mapping system and is built on top of Doctrine and the Neo4jPHP library.
+
+https://github.com/lphuberdeau/Neo4j-PHP-OGM[https://github.com/lphuberdeau/Neo4j-PHP-OGM]
+
+'''' 
+
+=== With the Symfony framework
+
+If you're using the Symfony framework, these bundles are available to you:
+
+=== Neo4jOGMBundle
+
+This bundle is wraps the Neo4j-PHP-OGM library mentioned above.
+
+https://github.com/klaussilveira/neo4j-ogm-bundle[https://github.com/klaussilveira/neo4j-ogm-bundle]
+
+''''
+
+==== NeoEloquent for Laravel
+
+Neo4j Graph Eloquent Driver for Laravel 4
+
+* link: https://github.com/Vinelab/NeoEloquent[NeoEloquent on GitHub]
+* Author: https://github.com/Mulkave[Abed Halawi]
+
+==== Neo4Laravel
+
+A Neo4j Laravel 4.1 OGM Provider.
+
+* https://github.com/lrezek/Neo4Laravel[Neo4Laravel on GitHub]
+* Author: https://github.com/lrezek[Lukas Rezek]
+
+''''
+
+=== Other Drivers
+
+==== neo4j-pdo
+
+
+This is a PHP Data Objects driver for the Neo4j graph database, it allows you to connect to a Neo4j server from PHP using the standard PDO API.
+The project currently only implements a “vanilla” PHP implementation, which means you need to use a special constructor to create your PDO connection.
+PHP extensions to register the driver with PDO in HHVM and Zend VM are planned future work.
+
+* http://github.com/jakewins/neo4j-pdo[neo4j-pdo on GitHub]
+* Author: http://twitter.com/jakewins[Jacob Hansson]
+
+==== PHP Cypher
+
+A PHP adapter for Neo4j REST API Cypher endpoint.
+
+* https://github.com/endyjasmi/neo4j[PHP Cypher on GitHub]
+* Author: https://github.com/endyjasmi[Endy Jasmi]
+
+''''
+
+=== Applications built with PHP and Neo4j
+
+==== Omnomhub
+
+Like for Github, but for recipes!
+
+* link:https://github.com/Omnomhub/omnomhub[Omnomhub on Github]
+* Author: https://twitter.com/michellesanver[Michelle Sanver]
+
+==== Thesaurus Manager
+
+If you want to built your own thesaurus, this app is made for you
+
+* link: http://okulbilisim.github.io/thesaurus-manager/[Thesaurus Manager on Github]
+* Author: https://github.com/hasantayyar[Hasan Tayyar]

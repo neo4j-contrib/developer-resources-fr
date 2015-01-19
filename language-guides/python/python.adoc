@@ -1,0 +1,110 @@
+= Using Neo4j from Python
+:level: Intermediate
+:toc:
+:toc-placement!:
+:toc-title: Overview
+:toclevels: 2
+:section: Develop with Neo4j
+:section-link: language-guides
+
+.Goals
+[abstract]
+If you are a Pythonista, this guide provides an overview of options for connecting to Neo4j. While this guide is not comprehensive it will introduce the different drivers and link to the relevant resources.
+
+.Prerequisites
+[abstract]
+You should be familiar with link:/developer/get-started/graph-database[graph database concepts] and the property graph model. You should have link:/download[installed Neo4j] and made yourself familiar with our link:/developer/cypher[Cypher Query language].
+
+[role=expertise]
+{level}
+
+toc::[]
+
+// tag::intro[]
+=== Neo4j from Python
+
+image::http://dev.assets.neo4j.com.s3.amazonaws.com/wp-content/uploads/2014/06/python-logo-master-v3-TM.png[width=300]
+
+Python is an excellent dynamic language, and we're proud to say that Neo4j works with it.
+Python drivers were there all from the beginning and a strong and driving force for adopting Neo4j in many places.
+
+Drivers for the different Python stacks enable you to use Neo4j from your familiar environment.
+// end::intro[]
+
+Many Pythonistas have invested a lot of time and love to develop all these drivers, so please if you use them, provide feedback to the authors. 
+
+include::../_includes/sample_project.adoc[]
+
+Python and Neo4j are a well established combination, mainly thanks to the many contributors in the community.
+
+For small apps it’s feasible to connect directly to Neo4j and execute the Cypher queries that you need to. 
+We also have Django support for building bigger web applications, in Neo4jDjango and Neomodel.
+
+// There’s also the community-supported python-embedded, which uses JPype and JNI to embed a JVM in your Python app; that lets you drive our core API from Python.
+
+==== Getting Started
+
+This http://neo4j.com/blog/py2neo-2-0-unleashed/[excellent article] from Nigel demonstrates how to join in the fun.
+
+=== Py2Neo
+
+image::http://dev.assets.neo4j.com.s3.amazonaws.com/wp-content/uploads/2014/04/py2neo.png[]
+
+Py2neo is a simple and pragmatic Python library that provides access to the popular graph database Neo4j via its HTTP-Apis.
+
+It has http://py2neo.org/2.0/intro.html[comprehensive documentation] and a lof related articles by its author.
+
+* {github}/language-guides/python/py2neo-2.0[Example Project with Py2Neo]
+* https://github.com/nigelsmall/py2neo[Py2Neo on GitHub]
+* Author: http://twitter.com/neonige[Nigel Small]
+* http://py2neo.org/2.0[Documentation]
+
+* http://nigelsmall.com/load2neo[Load2Neo]
+
+=== Neo4jRestClient
+
+Object-oriented Python library to interact with Neo4j standalone REST server
+
+* {github}/language-guides/python/neo4jrestclient[Example Project with Neo4jRestClient]
+* https://github.com/versae/neo4j-rest-client[Neo4j-Rest-Client on GitHub]
+* http://neo4j-rest-client.readthedocs.org/en/latest/[Documentation]
+* Author: http://twitter.com/versae[Javier de la Rosa]
+
+=== Other Drivers
+
+==== NeoModel
+
+image::http://dev.assets.neo4j.com.s3.amazonaws.com/wp-content/uploads/2014/04/neomodel-300.png[]
+
+An Object Graph Mapper (OGM) also usable for Django for the Neo4j graph database.
+
+* http://github.com/robinedwards/neomodel[NeoModel on GitHub]
+* Author: Robin Edwards
+
+==== neo4jdb-python
+
+Implements the http://legacy.python.org/dev/peps/pep-0249/[Python DB API 2.0] for Neo4j, compatible with python 2.6, 2.7, 3.2 and 3.3 and Neo4j >= 2.0.0
+
+* http://github.com/jakewins/neo4jdb-python[neo4jdb-python on GitHub]
+* Author: Jacob Hansson 
+
+====  neo4django
+
+// image::http://dev.assets.neo4j.com.s3.amazonaws.com/wp-content/uploads/2014/04/django.png[]
+
+neo4django is an Object Graph Mapper (OGM) for Django. Use familiar Django models and queries against Neo4j.
+
+* http://github.com/scholrly/neo4django[neo4django on GitHub]
+* Author: Matt Luongo
+
+==== Bulbs
+
+image::http://dev.assets.neo4j.com.s3.amazonaws.com/wp-content/uploads/2014/04/bulbflow.png[]
+
+Bulbs is an open-source Python persistence framework for graph databases and the first piece of a larger Web-development toolkit. It’s like an ORM for graphs.
+
+* http://bulbflow.com/overview/[Bulbs on GitHub]
+* Author: James Thornton
+
+[role=side-nav]
+* http://www.tsartsaris.gr/kivy2neo-sending-cypher-queries-from-a-kivy-app-to-a-neo4j-database[Using Neo4j from Kivy]

@@ -1,0 +1,21 @@
+=== Existing Language / Driver Examples
+
+For our example application we've provided a implementation for the languages and drivers listed below.
+Most of them have thankfully been made available by the driver maintainers.
+
+* {github}/language-guides/java[Java]
+** {github}/language-guides/java/jdbc[JDBC]
+** {github}/language-guides/java/server-extension[Server Extension]
+** {github}/language-guides/java/spring-boot-jdbc[Spring Boot with JDBC]
+** {github}/language-guides/java/spring-data-neo4j[Spring Data Neo4j]
+* {github}/language-guides/python[Python]
+** {github}/language-guides/python/py2neo-1.6[Py2Neo] by http://twitter.com/neonige[Nigel Small]
+** {github}/language-guides/python/neo4j-rest-client[Neo4j-Rest-Client] by http://twitter.com/versae[Javier de la Rosa]
+* {github}/language-guides/ruby[Ruby]
+** {github}/language-guides/ruby/neo4j-core[Neo4j-Core] by http://twitter.com/neo4jrb[Neo4j.rb Team]
+** {github}/language-guides/ruby/neo4jrb[Neo4j.rb Rails] by http://twitter.com/neo4jrb[Neo4j.rb Team]
+* *More*
+** Clojure: {github}/language-guides/clojure/neocons[neocons] by https://twitter.com/ducky427[Rohit Aggarwal & ClojureWerkz]
+** Go: {github}/language-guides/go/cq[CQ] by https://twitter.com/wefreema[Wes Freeman]
+** Perl: {github}/language-guides/perl/neo4p[Neo4p::REST] by https://twitter.com/thinkinator[Mark Jensen]
+** PHP: {github}/language-guides/php/neo4jphp[Neo4jPHP] by http://twitter.com/josh_adell[Josh Adell]

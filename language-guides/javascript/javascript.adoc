@@ -1,0 +1,146 @@
+= Neo4j from JavaScript
+:level: Intermediate
+:toc:
+:toc-placement!:
+:toc-title: Overview
+:toclevels: 2
+:section: Develop with Neo4j
+:section-link: language-guides
+
+.Goals
+[abstract]
+If you are a JavaScript developer, this guide provides an overview of options for connecting to Neo4j.
+While this guide is not comprehensive it will introduce the different Drivers and link to the relevant resources.
+
+.Prerequisites
+[abstract]
+You should be familiar with link:/developer/get-started/graph-database[graph database concepts] and the property graph model.
+You should have link:/download[installed Neo4j] and made yourself familiar with our link:/developer/cypher[Cypher Query language].
+
+[role=expertise]
+{level}
+
+toc::[]
+
+// tag::intro[]
+=== Neo4j for JavaScript Developers
+
+image::http://dev.assets.neo4j.com.s3.amazonaws.com/wp-content/uploads/2014/04/nodejs.png[]
+
+The standalone Neo4j-Server can be installed on any machine and then accessed via its HTTP API. 
+
+Below we show how you can use something as simple as the `request` module to send queries to and receive responses from Neo4j.
+
+You can also choose to leverage one of the existing drivers for Neo4j which wrap that protocol in a more convenient API for you.
+// end::intro[]
+
+Follow the tips below to get you started.
+
+include::../_includes/sample_project.adoc[]
+
+=== Using the HTTP-Endpoint directly
+
+You can use something as simple as the `request` node-module to send queries to and receive responses from Neo4j.
+The endpoint protocol and formats are explained in detail in the {manual}/rest-api-transactional.html[Neo4j Manual].
+It enables you do to much more, e.g. sending many statements per request or keeping transactions open across multiple requests.
+
+Here is a very simple example:
+
+.Simple Function Accessing the Remote Endpoint
+[source,javascript]
+----
+var r=require("request");
+var txUrl = "http://localhost:7474/db/data/transaction/commit";
+function cypher(query,params,cb) { 
+  r.post({uri:txUrl,
+          json:{statements:[{statement:query,parameters:params}]}},
+         function(err,res) { cb(err,res.body)}) 
+}
+----
+
+.Running the Function
+[source,javascript]
+---- 
+var query="MATCH (n:User) RETURN n, labels(n) as l LIMIT {limit}"
+var params={limit: 10}
+var cb=function(err,data) { console.log(JSON.stringify(data)) }
+ 
+cypher(query,params,cb)
+ 
+{"results":[
+  {"columns":["n","l"],
+   "data":[
+     {"row":[{"name":"Aran"},["User"]]}
+    ]
+  }],
+ "errors":[]}
+----
+
+=== Seraph
+
+*Seraph* is a comprehensive, well documented driver for Neo4j, which supports all Neo4j features and provides not only Neo4j connection support, but extensive lifecycle handling.
+The additional extensions *seraph-model* and *seraph-resource* allow you to quickly load and persist your models and integrate seraph-model resolution into your express routes with a base-controller for CRUD operations.
+With *disposable-seraph* you can manage a disposable Neo4j-instance for automatic testing.
+
+* https://github.com/brikteknologier/seraph[seraph on GitHub]
+* Author: https://github.com/jonpacker[Jon Packer via BRIK Teknologier, Norway]
+* https://github.com/brikteknologier/seraph-model[seraph-model on GitHub]
+* https://github.com/brikteknologier/seraph-resource[seraph-resource on GitHub]
+* https://github.com/brikteknologier/disposable-seraph[disposable-seraph on GitHub]
+
+=== cypher-stream
+
+Neo4j cypher queries as node object streams.
+
+Transactions are duplex streams that allow you to write query statements then commit or roll back the written queries.
+
+To get a stream per statement, just pass a callback function with the statement object. 
+This works for regular cypher calls and transactions.
+
+* https://github.com/brian-gates/cypher-stream[cypher-stream on GitHub]
+* Author: https://github.com/brian-gates[Brian Gates]
+* https://github.com/brian-gates/streaming-stack[Simple example of an ember/node/neo4j stack] that streams from database to client.
+
+=== node-neo4j
+
+Most widely used Node.js driver for Neo4j.
+
+// TODO our example project
+
+* https://github.com/aseemk/node-neo4j-template[Example Project]
+* http://github.com/thingdom/node-neo4j[node-neo4j on GitHub]
+* Authors: https://twitter.com/aseemk[Aseem Kishore] & Daniel Gasienica
+* http://coffeedoc.info/github/thingdom/node-neo4j/[Documentation]
+* https://groups.google.com/forum/#!forum/node-neo4j[google group]
+
+=== Meteor.js
+
+http://meteor.com[Meteor] is a complete open source platform for building web and mobile apps in pure JavaScript.
+
+Finally a Neo4j driver for Meteor is available.
+
+Dmitriy wrapped node-neo4j to be usable with Meteor and also provided a pseudo-reactive driver to support the life-query functionality.
+
+* Author: https://twitter.com/smart_egg[Dmitriy Aristarkhovich]
+* https://atmospherejs.com/ostrio/neo4jdriver[Neo4j Connector]
+* https://atmospherejs.com/ostrio/neo4jreactivity[pseudo reactive Driver]
+
+=== Other Drivers
+
+==== neo4j-js
+
+A Node.js (pure JavaScript) client library for accessing neo4j databases with batch support.
+
+* http://github.com/bretcope/neo4j-js[neo4j-js on GitHub]
+* Author: Bret Copeland
+
+==== node-neo4j-embedded
+
+Node.js driver for the embedded Neo4j Database, it accesses the datatabase API through the JVM-integration directly.
+Also supports HA Setups.
+
+Note: This is not idiomatic Javascript.
+For performance reasons it stays as close to the original Java API as possible.
+
+* http://github.com/joewhite86/node-neo4j-embedded[node-neo4j-embedded on GitHub]
+* Author: Jochen Weis

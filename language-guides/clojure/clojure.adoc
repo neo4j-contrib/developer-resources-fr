@@ -1,0 +1,50 @@
+= Using Neo4j from Clojure
+:level: Intermediate
+:toc:
+:toc-placement!:
+:toc-title: Overview
+:toclevels: 2
+:section: Develop with Neo4j
+:section-link: language-guides
+
+.Goals
+[abstract]
+If you are a Clojure developer, this guide provides an overview of options for connecting to Neo4j. While this guide is not comprehensive it will introduce the different drivers and link to the relevant resources.
+
+.Prerequisites
+[abstract]
+You should be familiar with link:/developer/get-started/graph-database[graph database concepts] and the property graph model. You should have link:/download[installed Neo4j] and made yourself familiar with our link:/developer/cypher[Cypher Query language].
+
+[role=expertise]
+{level}
+
+toc::[]
+
+// tag::intro[]
+=== Neo4j for Clojure Developers
+
+image::http://dev.assets.neo4j.com.s3.amazonaws.com/wp-content/uploads/2014/04/clojure.png[]
+
+Clojure drivers either support Neo4j embedded on the JVM or use Neo4j Server via its HTTP APIs, like the impressive `neocons` project.
+
+// end::intro[]
+
+Members of the Clojure community have invested a lot of time and love to develop all these drivers, so if you use them please provide feedback to the authors.
+
+include::../_includes/sample_project.adoc[]
+
+=== Neocons
+
+An idiomatic, feature-rich Clojure client which supports (almost) all Neo4j REST API features and is constantly tested against bleeding-edge server changes, like the Cypher language improvements.
+
+* {github}/language-guides/clojure/neocons[Example Project with neocons]
+* https://github.com/michaelklishin/neocons[neocons on GitHub]
+* Authors: Michael Klishin, Rohit Aggarwal
+* http://clojureneo4j.info/[Documentation]
+
+==== Borneo
+
+Clojure wrapper for Neo4j, a graph database, in embedded JVM mode.
+
+* http://github.com/wagjo/borneo[Borneo on GitHub]
+* Author: Jozef Wagner
