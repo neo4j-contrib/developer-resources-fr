@@ -1,15 +1,16 @@
-== Neo4j Developer Resources
+== Resources Développeurs Neo4j
 
-This is the repository with the source content for the http://neo4j.com _developer resources_ section.
+Ceci est le dépôt du contenu de la section _ressources développeurs_ du site http://neo4j.fr .
 
-The content is written as textual format in http://asciidoctor.org[AsciiDoc] rendered with asciidoctor using templates to HTML and pushed to the `gh-pages` branch or to wordpress.
+Le contenu est écrit au format textuel en http://asciidoctor.org[AsciiDoc] et rendu avec asciidoctor utilisant des templates HTML
+et envoyé vers la branche `gh-pages` ou sur wordpress.
 
-Install asciidoctor (1.5.1) ruby gems with `bundle install` in the main directory.
+Installez les ruby gems asciidoctor (1.5.1) en exécutant `bundle install` dans le répertoire principal.
 
-You can render a single document to its `index.html` by calling `./render.sh path/to/doc.adoc` +
-(e.g. `./render.sh in-production/guide-cloud-deployment/guide-cloud-deployment.adoc`) or render all pages at once with just `./render.sh`
+Vous pouvez rendre un simple document vers son `index.html` en exécutant `./render.sh path/vers/doc.adoc` + 
+(e.g. `./render.sh in-production/guide-cloud-deployment/guide-cloud-deployment.adoc`) ou effectuer le rendu de toutes les pages en exécutant tout simplement `./render.sh`
 
-You can open the generated `index.html` file locally to check the rendering/preview, or start the `http` script in the main directory, and then open: http://localhost:8000/developer-resources/
+Vous pouvez ouvrir le fichier `index.html` localement afin de vérifier le rendu/prévisualisation, ou lancer le serveur via le script `http` du répertoire principal et ensuite vous rendre à l'adresse http://localhost:8000/developer-resources-fr/
 
 === Guides
 
