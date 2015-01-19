@@ -1,4 +1,4 @@
-== Resources Développeurs Neo4j
+== Ressources Développeurs Neo4j
 
 Ceci est le dépôt du contenu de la section _ressources développeurs_ du site http://neo4j.fr .
 
