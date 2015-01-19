@@ -1,5 +1,14 @@
 == Ressources Développeurs Neo4j
 
+=== Vous voulez participer à la traduction des guides développeurs ?
+
+Nous en serions extrêmement ravis !
+
+Le plus simple est de contacter le mailto:christophe@graphaware.com[Le responsable de la traduction FR] afin d'avoir
+un échange rapide et quelques conseils afin d'optimiser votre processus de traduction.
+
+---
+
 Ceci est le dépôt du contenu de la section _ressources développeurs_ du site http://neo4j.fr .
 
 Le contenu est écrit au format textuel en http://asciidoctor.org[AsciiDoc] et rendu avec asciidoctor utilisant des templates HTML
