@@ -1,34 +1,34 @@
-== Neo4j Developer Resources
+== Ressources Développeurs Neo4j
 
-This is the repository with the source content for the http://neo4j.com _developer resources_ section.
+Ceci est le dépôt du contenu de la section _ressources développeurs_ du site http://neo4j.fr .
 
-The content is written as textual format in http://asciidoctor.org[AsciiDoc] rendered with asciidoctor using templates to HTML and pushed to the `gh-pages` branch or to wordpress.
+Le contenu est écrit au format textuel en http://asciidoctor.org[AsciiDoc] et rendu avec asciidoctor utilisant des templates HTML
+et envoyé vers la branche `gh-pages` ou sur wordpress.
 
-Install asciidoctor (1.5.1) ruby gems with `bundle install` in the main directory.
+Installez les ruby gems asciidoctor (1.5.1) en exécutant `bundle install` dans le répertoire principal.
 
-You can render a single document to its `index.html` by calling `./render.sh path/to/doc.adoc` +
-(e.g. `./render.sh in-production/guide-cloud-deployment/guide-cloud-deployment.adoc`) or render all pages at once with just `./render.sh`
+Vous pouvez rendre un simple document vers son `index.html` en exécutant `./render.sh path/vers/doc.adoc` + 
+(e.g. `./render.sh in-production/guide-cloud-deployment/guide-cloud-deployment.adoc`) ou effectuer le rendu de toutes les pages en exécutant tout simplement `./render.sh`
 
-You can open the generated `index.html` file locally to check the rendering/preview, or start the `http` script in the main directory, and then open: http://localhost:8000/developer-resources/
+Vous pouvez ouvrir le fichier `index.html` localement afin de vérifier le rendu/prévisualisation, ou lancer le serveur via le script `http` du répertoire principal et ensuite vous rendre à l'adresse http://localhost:8000/developer-resources-fr/
 
 === Guides
 
-Most of the documents in this developer resources section are organized as a guide. 
-Those guides come with a consistent structure and similar use of language and assets. 
-Each of the guides lives in its own directory and is rendered into an `index.html` file for publication.
-You can run the rendering process by calling `render.sh` on the command line.
+La majorité des documents des sections `ressources développeurs` sont organisés comme guides.
+Ces guides ont une structure consistente et un usage similaire du langage et des contenus.
+Chacun de ces guides vit dans son propre répertoire et est rendu vers un fichier `index.html` pour publication.
+Vous pouvez effectuer le processus du rendu en exécutant `./render.sh` en ligne de commande.
 
-A guide has this general structure:
+Un guide a cette sructure générale:
 
-1. goal for this guide
-2. prerequisite with links to relevant sections
-3. recommended experience level (Beginner, Intermediate, Advanced)
-4. Multiple sections and subsections outlining the content
-use a welcoming and helpful, not overly complex or eloquent language with examples in code, pictures or videos
-5. each top level (`===`) section can be followed by a sidebar section which will be rendered on the right side with links to follow up information (internal links, calls to action, external links)
+1. but de ce guide
+2. prérequis avec des liens vers les sections relatantes
+3. expérience recommandée (débutant, intermédiaire, avancé)
+4. de multiples sections et sous-sections représentant le contenu
+utilisez un langage agréable et aidant, pas trop complexe ou éloquent avec des exemples de code, images ou vidéos
+5. chaque section de haut niveau (`===`) peut être suivie d'une section de côté (sidebar) avec des liens qui seront rendus sur le côté droit pointant vers des informations (liens internes, appels à action, liens externes)
 
-Please see the link:./guide_template.adoc[example guide template file] for a blueprint of the document structure needed.
-And as link:./guide_template.html[rendered document].
+Veuillez regarder link:./guide_template.adoc[le fichier guide d'exemple] pour un blueprint de la structure nécessaire du document et link:./guide_template.html[son rendu].
 
 ==== Calls to Action
 
@@ -40,31 +40,32 @@ And as link:./guide_template.html[rendered document].
 * http://neo4j.com/download[Neo4j Download]
 * http://neo4j.com/?s=+whitepaper[Whitepapers]
 
-==== Internal and External Content
+==== Projets internes et externes
 
-* Other developer-resources and neo4j.com pages
-* http://neo4j.com/docs/chunked/stable[Manual Pages] and Articles
+* Autres ressources développeurs et le site neo4j.fr
+* http://neo4j.com/docs/chunked/stable[Pages du manuel] et Articles
 * Blog Posts (http://neo4j.com/blog, http://blog.bruggen.com?view=mosaic[Rik], http://maxdemarzi.com[Max], http://www.markhneedham.com/blog/category/databases-2/neo4j/[Mark], http://www.kennybastani.com/[Kenny], http://jexp.de/blog[Michael], http://iansrobinson.com/[Ian], http://jimwebber.org/[Jim], ...)
 * http://neo4j.com/events?type=Meetup[Local Meetup Groups]
 * http://watch.neo4j.org[Webinar/Talk Recordings]
 
-=== Example Applications per Language, Stack and Driver
+=== Exemple d'application par langage, couche ou driver
 
-To explain how to use Neo4j with different programming languages we provide an intro section per language, located in `language-guides/<language>/<language>.adoc`.
+Afin d'expliquer l'usage de Neo4j à travers différents langages de programmation, nous proposons une section d'introduction par
+langage se trouvant dans le répertoire `language-guides/<language>/<language>.adoc`.
 
-To show how the different drivers for that language would be used/integrated we also provide small example projects/setups in the `language-guides/<language>/<driver>` directories.
+Pour montrer comment les différents drivers pour ce langage seraient utilisés/intégrés, nous disposons aussi d'exemples de projets/installations dans le répertoire `language-guides/<language>/<driver>` 
 
-The example application is a simple, single-page movies app based on the Neo4j-Movies dataset that comes with the Neo4j-Server (`:play movies` in the Neo4j-Browser).
+L'application d'exemple est une simple application mono-page basée sur le jeu de données Neo4j-Movies qui est livré avec Neo4j-Server (`:play movies` dans le Neo4j-Browser).
 
-See an example running http://my-neo4j-movies-app.herokuapp.com/[here on Heroku].
+Vous pouvez voir un exemple http://my-neo4j-movies-app.herokuapp.com/[ici sur heroku].
 
-The HTML page uses jQuery ajax requests to query 3 REST-Endpoints in the backend for `/search`, `/movie` and `/graph`
+La page HTML utilise des requêtes ajax jQuery afin de requêter 3 endpoints REST dans le backend pour `/search`, `/movie` et `/graph`
 
-* `/search` lists the movies found by title
-* `/movie` returns details for a single movie
-* `/graph` renders the full graph as a basic d3-visualization
+* `/search` liste les films trouvés par titre
+* `/movie` retourne les détails d'un seul film
+* `/graph` retourne le rendu du graphe comme une visualisation d3 simple
 
-This is our current list of projects:
+Ceci est la liste des projets actuels:
 
 * java/jdbc
 * java/server-extension
